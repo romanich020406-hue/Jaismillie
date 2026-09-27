@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Жайна Султанова · SMM</title>
+<meta name="description" content="Портфолио SMM-специалиста, мобилографа и видеографа Жайны Султановой">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --pink: #FFC5D3;
+    --pink-soft: #FFE3EA;
+    --paper: #FFF7F9;
+    --green: #b7cd7f;
+    --green-deep: #4b5a22;
+    --ink: #33202a;
+    --muted: #7b5f6a;
+    --line: rgba(51, 32, 42, .14);
+    --display: "Prata", "Playfair Display", Georgia, "Times New Roman", serif;
+    --body: "Onest", "Helvetica Neue", Arial, sans-serif;
+    --hand: "Caveat", "Comic Sans MS", cursive;
+    --wrap: 1180px;
+    --radius: 22px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 17px/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.08; text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: 24px; }
+  section { padding-block: 96px; scroll-margin-top: 70px; }
+
+  /* ---------- navigation ---------- */
+  .nav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: rgba(255, 197, 211, .86);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; gap: 28px; min-height: 64px; }
+  .brand { font-family: var(--display); font-size: 21px; text-decoration: none; margin-right: auto; }
+  .nav-links { display: flex; gap: 22px; font-size: 15px; font-weight: 500; }
+  .nav-links a { text-decoration: none; opacity: .8; }
+  .nav-links a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 5px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green); color: var(--ink);
+    font: 600 15px/1 var(--body); text-decoration: none;
+    padding: 15px 24px; border-radius: 999px; border: 1.5px solid var(--ink);
+    transition: transform .2s ease, box-shadow .2s ease;
+    box-shadow: 0 4px 0 var(--ink);
+    cursor: pointer;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--ink); }
+  .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--ink); }
+  .btn.ghost { background: transparent; box-shadow: none; }
+  .btn.ghost:hover { background: rgba(255,255,255,.5); }
+  .btn.small { padding: 11px 18px; font-size: 14px; box-shadow: 0 3px 0 var(--ink); }
+  :focus-visible { outline: 3px solid var(--green-deep); outline-offset: 3px; border-radius: 6px; }
+
+  .chip {
+    display: inline-block; background: var(--green); color: var(--ink);
+    font: 600 13px/1.2 var(--body); letter-spacing: .04em; text-transform: uppercase;
+    padding: 9px 14px; border-radius: 999px;
+  }
+  .chip.outline { background: transparent; border: 1.5px solid var(--ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .eyebrow { font: 600 13px/1.2 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--green-deep); }
+  .hand { font-family: var(--hand); font-weight: 700; color: var(--green-deep); line-height: 1; }
+
+  /* ---------- hero ---------- */
+  .hero { background: var(--pink); padding-block: 72px 0; position: relative; overflow: hidden; }
+  .hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+  .hero::before { width: 520px; height: 520px; right: -140px; top: -180px; background: var(--pink-soft); opacity: .7; }
+  .hero::after { width: 340px; height: 340px; left: -120px; bottom: 60px; background: rgba(183, 205, 127, .35); }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.25fr .9fr; gap: 56px; align-items: end; }
+  .hero-text { padding-bottom: 72px; display: grid; gap: 26px; }
+  .hero h1 { font-size: clamp(52px, 8.4vw, 116px); letter-spacing: -.01em; }
+  .hero h1 span { display: block; }
+  .hero h1 em { font-style: normal; color: var(--green-deep); }
+  .roles { display: grid; gap: 6px; font-size: 18px; max-width: 34ch; }
+  .roles b { font-weight: 600; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero-photo { position: relative; justify-self: end; width: min(100%, 400px); }
+  .hero-photo .arch {
+    border-radius: 999px 999px 0 0; overflow: hidden; border: 2px solid var(--ink); border-bottom: 0;
+    background: var(--paper); aspect-ratio: 3 / 4.1;
+  }
+  .hero-photo .arch img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .sticker {
+    position: absolute; background: var(--green); border: 1.5px solid var(--ink); border-radius: 999px;
+    padding: 12px 20px; font: 700 26px/1 var(--hand); color: var(--ink);
+    box-shadow: 0 4px 0 var(--ink); transform: rotate(-7deg);
+  }
+  .hero-photo .sticker { left: -44px; top: 34%; }
+  .hero-photo .sticker.two { left: auto; right: -18px; top: 12%; transform: rotate(6deg); background: var(--paper); }
+
+  /* ---------- tools ---------- */
+  .tools { background: var(--ink); color: var(--paper); padding-block: 56px; }
+  .tools-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+  .tools-head h2 { font-size: clamp(28px, 3.4vw, 40px); }
+  .tools-head .eyebrow { color: var(--green); }
+  .tool-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .tool-group { border: 1.5px solid rgba(255, 247, 249, .2); border-radius: var(--radius); padding: 24px; display: grid; gap: 16px; align-content: start; }
+  .tool-group h3 { font-size: 22px; color: var(--pink); }
+  .tool-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .tool-list li { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; align-items: center; }
+  .tool-list li::before { content: ""; grid-row: span 2; width: 10px; height: 10px; border-radius: 50%; background: var(--green); }
+  .tool-list b { font-weight: 600; }
+  .tool-list span { grid-column: 2; font-size: 14px; color: rgba(255, 247, 249, .66); }
+
+  /* ---------- section heads ---------- */
+  .head { display: grid; gap: 14px; margin-bottom: 44px; max-width: 760px; }
+  .head h2 { font-size: clamp(36px, 5vw, 60px); }
+  .head p { color: var(--muted); font-size: 18px; max-width: 60ch; }
+
+  /* ---------- approach ---------- */
+  .approach { background: var(--pink-soft); padding-block: 80px; }
+  .approach-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; }
+  .a-card { background: var(--paper); border-radius: var(--radius); padding: 34px; display: grid; gap: 18px; align-content: start; }
+  .a-card h3 { font-size: clamp(26px, 2.8vw, 34px); }
+  .a-card > p { color: var(--muted); }
+  .goal-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .goal-list li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; }
+  .goal-list .mk { width: 40px; height: 40px; border-radius: 50%; background: var(--green); border: 1.5px solid var(--ink); display: grid; place-items: center; }
+  .goal-list .mk svg { width: 20px; height: 20px; stroke: var(--ink); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .goal-list b { display: block; font-weight: 600; }
+  .goal-list span { color: var(--muted); font-size: 15px; }
+  .sys-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .sys { border: 1.5px solid var(--ink); border-radius: 16px; padding: 14px 16px; display: grid; gap: 4px; }
+  .sys b { font-weight: 600; }
+  .sys span { font-size: 14px; color: var(--muted); line-height: 1.4; }
+  .sys.hl { background: var(--green); }
+  .sys.hl span { color: var(--ink); }
+
+  /* ---------- zoomable thumbnails ---------- */
+  .zw { position: relative; transition: transform .28s cubic-bezier(.2, .7, .2, 1), box-shadow .28s ease; will-change: transform; }
+  .zw.on { z-index: 30; box-shadow: 0 30px 70px -20px rgba(51, 32, 42, .55); }
+  [data-zoom] { cursor: zoom-in; }
+  .phone { border: 5px solid var(--ink); border-radius: 22px; overflow: hidden; background: #fff; }
+  .phone img { width: 100%; }
+  .shot { border-radius: 14px; overflow: hidden; border: 1.5px solid var(--line); background: #fff; }
+  .shot img { width: 100%; }
+  figure { margin: 0; display: grid; gap: 10px; align-content: start; }
+  figcaption { font-size: 14px; color: var(--muted); line-height: 1.45; }
+  figcaption b { color: var(--ink); font-weight: 600; }
+  .hint { font-size: 14px; color: var(--muted); display: inline-flex; align-items: center; gap: 8px; }
+  .hint::before { content: "⤢"; font-size: 16px; color: var(--green-deep); }
+
+  /* ---------- result case ---------- */
+  .result-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 230px)) minmax(0, 1fr); gap: 36px; align-items: start; }
+  .ba { position: relative; }
+  .ba .label { position: absolute; top: -16px; left: 50%; transform: translateX(-50%) rotate(-3deg); z-index: 2; }
+  .ba .label.now { background: var(--green); }
+  .label { background: var(--paper); border: 1.5px solid var(--ink); border-radius: 999px; padding: 7px 16px; font: 700 22px/1 var(--hand); white-space: nowrap; }
+  .stats { display: grid; gap: 14px; max-width: 460px; }
+  .stat { border: 1.5px solid var(--ink); border-radius: var(--radius); padding: 22px 24px; background: #fff; display: grid; gap: 6px; }
+  .stat .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .stat .big { font: 400 clamp(38px, 4vw, 50px)/1 var(--display); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .stat .big small { font-size: .5em; }
+  .stat .delta { background: var(--green); border-radius: 999px; padding: 6px 12px; font: 700 15px/1 var(--body); white-space: nowrap; }
+  .stat .from { color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+  .stat .name { font-weight: 600; }
+  .stat-note { font-size: 30px; transform: rotate(-2deg); padding-left: 6px; }
+
+  /* ---------- services ---------- */
+  .services { background: var(--pink); }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .svc { background: var(--paper); border: 1.5px solid var(--ink); border-radius: var(--radius); padding: 26px 24px; display: grid; gap: 12px; align-content: start; }
+  .svc .ico { width: 48px; height: 48px; border-radius: 50%; background: var(--green); border: 1.5px solid var(--ink); display: grid; place-items: center; }
+  .svc .ico svg { width: 24px; height: 24px; stroke: var(--ink); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .svc h3 { font-size: 23px; }
+  .svc p { color: var(--muted); font-size: 15px; line-height: 1.5; }
+  .beyond { margin-top: 36px; display: grid; grid-template-columns: auto 1fr; gap: 20px 32px; align-items: center; background: var(--paper); border-radius: var(--radius); padding: 26px 30px; }
+  .beyond h3 { font-size: 26px; }
+
+  /* ---------- projects ---------- */
+  .proj-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px 24px; }
+  .proj { display: grid; gap: 14px; align-content: start; }
+  .logo { width: 128px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--ink); background: #fff; }
+  .logo img { width: 100%; height: 100%; object-fit: cover; }
+  .logo.pad img { object-fit: contain; padding: 14px; }
+  .proj h3 { font-size: 21px; overflow-wrap: anywhere; }
+  .proj .meta { display: grid; gap: 6px; }
+  .proj .meta p { font-size: 15px; }
+  .proj .tag { justify-self: start; font-size: 11px; }
+  .proj .hand { font-size: 26px; }
+
+  /* ---------- pinduoduo case ---------- */
+  .case { background: var(--pink-soft); }
+  .case-block { display: grid; gap: 20px; padding-block: 40px; border-top: 1.5px solid var(--line); }
+  .case-block:first-of-type { border-top: 0; padding-top: 0; }
+  .case-block > .bh { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  .case-block h3 { font-size: 30px; }
+  .case-block .bh p { color: var(--muted); max-width: 60ch; }
+  .pack { display: grid; grid-template-columns: 150px minmax(0, 440px); gap: 24px; align-items: start; }
+  .pack .right { display: grid; gap: 16px; }
+  .translate { background: var(--paper); border-radius: 14px; padding: 16px 18px; font-size: 14px; display: grid; gap: 4px; }
+  .translate .eyebrow { font-size: 11px; }
+  .row4 { display: grid; grid-template-columns: repeat(4, minmax(0, 150px)); gap: 18px; }
+  .story { aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; border: 1.5px solid var(--ink); }
+  .story img { width: 100%; height: 100%; object-fit: cover; }
+  .slides { display: grid; grid-template-columns: repeat(5, minmax(0, 170px)); gap: 16px; }
+  .sq { aspect-ratio: 1; border-radius: 12px; overflow: hidden; border: 1.5px solid var(--ink); }
+  .sq img { width: 100%; height: 100%; object-fit: cover; }
+  .step { font: 700 12px/1 var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--green-deep); }
+  .warm { display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 440px); gap: 24px; align-items: start; }
+
+  /* ---------- content gallery ---------- */
+  .tour { display: grid; grid-template-columns: repeat(4, minmax(0, 180px)); gap: 18px; align-items: start; }
+  .p45 { aspect-ratio: 4 / 5; border-radius: 14px; overflow: hidden; }
+  .p45 img { width: 100%; height: 100%; object-fit: cover; }
+  .tour figure:nth-child(even) { margin-top: 28px; }
+  .sub { font-size: 26px; margin: 64px 0 22px; }
+  .visual-grid { display: grid; grid-template-columns: minmax(0, 190px) minmax(0, 190px) minmax(0, 470px); gap: 24px; align-items: start; }
+  .shoot { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .tall { aspect-ratio: 2 / 3; border-radius: 14px; overflow: hidden; }
+  .tall img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ---------- video ---------- */
+  .video { background: var(--ink); color: var(--paper); }
+  .video .head p, .video figcaption, .video .hint { color: rgba(255, 247, 249, .72); }
+  .video figcaption b { color: var(--paper); }
+  .video .eyebrow, .video .hint::before { color: var(--green); }
+  .reel { display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start; }
+  .reel figure { width: max-content; max-width: 100%; }
+  .frame { border-radius: 12px; overflow: hidden; }
+  .frame img { height: 170px; width: auto; max-width: 100%; object-fit: cover; }
+  .reel figcaption { max-width: 260px; }
+  .experts { margin-top: 72px; padding-top: 56px; border-top: 1.5px solid rgba(255, 247, 249, .18); }
+  .experts .head h2 { font-size: clamp(30px, 4vw, 46px); }
+  .exp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .exp { background: rgba(255, 247, 249, .06); border: 1.5px solid rgba(255, 247, 249, .16); border-radius: var(--radius); padding: 22px; display: grid; gap: 12px; align-content: start; }
+  .ava { width: 84px; aspect-ratio: 1; border-radius: 50%; overflow: hidden; border: 2px solid var(--pink); }
+  .ava img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); }
+  .exp h3 { font-size: 20px; color: var(--pink); }
+  .exp p { font-size: 14px; line-height: 1.5; color: rgba(255, 247, 249, .74); }
+
+  /* ---------- personal blog ---------- */
+  .blog-grid { display: grid; grid-template-columns: minmax(0, 210px) minmax(0, 460px); gap: 36px; align-items: start; }
+  .blog-grid .right { display: grid; gap: 18px; }
+
+  /* ---------- education ---------- */
+  .edu { background: var(--pink-soft); }
+  .edu-box { background: var(--paper); border: 1.5px solid var(--ink); border-radius: 36px; padding: clamp(28px, 5vw, 56px); display: grid; grid-template-columns: 1fr minmax(0, 420px); gap: 44px; align-items: center; }
+  .edu-box h2 { font-size: clamp(34px, 4.6vw, 56px); }
+  .edu-text { display: grid; gap: 22px; }
+  .edu-text > p { color: var(--muted); font-size: 18px; max-width: 48ch; }
+  .edu-facts { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 12px 32px; }
+  .edu-facts div { display: grid; gap: 2px; }
+  .edu-facts b { font: 400 clamp(22px, 2.6vw, 30px)/1.15 var(--display); }
+  .edu-facts span { font-size: 14px; color: var(--muted); }
+  .cert { background: #fff; border-radius: 16px; padding: 10px; border: 1.5px solid var(--ink); }
+  .cert img { border-radius: 10px; }
+
+  /* ---------- about ---------- */
+  .about { background: var(--pink); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .facts { display: grid; border-top: 1.5px solid var(--ink); }
+  .fact { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding-block: 16px; border-bottom: 1.5px solid var(--ink); }
+  .fact dt { font-weight: 600; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; padding-top: 2px; }
+  .fact dd { margin: 0; }
+  .qual { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .qual span { background: var(--paper); border: 1.5px solid var(--ink); border-radius: 14px; padding: 12px 14px; font-weight: 500; display: flex; gap: 10px; align-items: center; }
+  .qual span::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 50%; background: var(--green); border: 1.5px solid var(--ink); }
+
+  /* ---------- contacts ---------- */
+  .contact { background: var(--paper); }
+  .contact-box { background: var(--pink); border: 1.5px solid var(--ink); border-radius: 36px; padding: clamp(28px, 6vw, 64px); display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+  .contact-box h2 { font-size: clamp(38px, 5.4vw, 68px); }
+  .contact-box .hand { font-size: 32px; margin-top: 14px; }
+  .c-list { display: grid; gap: 12px; }
+  .c-item { display: flex; align-items: center; gap: 14px; background: var(--paper); border: 1.5px solid var(--ink); border-radius: 18px; padding: 14px 16px; }
+  .c-item .ico { flex: none; width: 42px; height: 42px; border-radius: 50%; background: var(--green); display: grid; place-items: center; border: 1.5px solid var(--ink); }
+  .c-item .ico svg { width: 20px; height: 20px; stroke: var(--ink); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .c-item .txt { display: grid; min-width: 0; margin-right: auto; }
+  .c-item .txt small { color: var(--muted); font-size: 13px; }
+  .c-item .txt a { font-weight: 600; font-size: 17px; text-decoration: none; overflow-wrap: anywhere; }
+  .copy { background: none; border: 1.5px solid var(--ink); border-radius: 999px; font: 600 13px/1 var(--body); padding: 9px 12px; cursor: pointer; color: var(--ink); }
+  .copy:hover { background: var(--green); }
+  footer { padding-block: 32px 44px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  /* ---------- lightbox ---------- */
+  dialog.lb { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 92vh; overflow: visible; }
+  dialog.lb::backdrop { background: rgba(51, 32, 42, .84); }
+  dialog.lb img { max-width: 94vw; max-height: 84vh; border-radius: 14px; margin-inline: auto; }
+  dialog.lb p { color: var(--paper); text-align: center; margin-top: 12px; font-size: 15px; }
+  dialog.lb button { position: fixed; top: 18px; right: 18px; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--ink); background: var(--green); font-size: 22px; cursor: pointer; color: var(--ink); }
+
+  /* ---------- load animation ---------- */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero h1 span, .hero .roles, .hero-cta, .hero-photo { animation: rise .9s cubic-bezier(.2, .7, .2, 1) both; }
+    .hero h1 span:nth-child(2) { animation-delay: .08s; }
+    .hero .roles { animation-delay: .18s; }
+    .hero-cta { animation-delay: .26s; }
+    .hero-photo { animation-delay: .1s; }
+    @keyframes rise { from { transform: translateY(24px); opacity: .001; } }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .zw { transition: none; }
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1020px) {
+    .nav-links { display: none; }
+    .tool-groups { grid-template-columns: 1fr 1fr; }
+    .approach-grid { grid-template-columns: 1fr; }
+    .result-grid { grid-template-columns: repeat(2, minmax(0, 220px)); }
+    .result-grid .stats { grid-column: 1 / -1; }
+    .svc-grid { grid-template-columns: 1fr 1fr; }
+    .proj-grid { grid-template-columns: repeat(3, 1fr); }
+    .visual-grid { grid-template-columns: repeat(2, minmax(0, 190px)); }
+    .visual-grid .shoot-wrap { grid-column: 1 / -1; max-width: 470px; }
+    .exp-grid { grid-template-columns: 1fr 1fr; }
+    .edu-box, .contact-box { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 760px) {
+    section { padding-block: 64px; }
+    .hero { padding-top: 40px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 8px; }
+    .hero-text { padding-bottom: 36px; }
+    .hero-photo { justify-self: center; width: min(78%, 340px); order: -1; }
+    .hero-photo .sticker { left: -22px; font-size: 22px; }
+    .hero-photo .sticker.two { right: -14px; }
+    .tool-groups { grid-template-columns: 1fr; }
+    .proj-grid { grid-template-columns: 1fr 1fr; }
+    .logo { width: 108px; }
+    .pack { grid-template-columns: 1fr; }
+    .pack > figure { max-width: 140px; }
+    .row4 { grid-template-columns: repeat(2, minmax(0, 150px)); }
+    .slides { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .warm { grid-template-columns: 1fr; }
+    .warm > figure:first-child { max-width: 240px; }
+    .tour { grid-template-columns: repeat(2, minmax(0, 180px)); }
+    .blog-grid, .about-grid { grid-template-columns: 1fr; }
+    .blog-grid > figure { max-width: 210px; }
+    .beyond { grid-template-columns: 1fr; }
+    .fact { grid-template-columns: 1fr; gap: 6px; }
+    .frame img { height: 130px; }
+    .edu-facts { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .wrap { padding-inline: 16px; }
+    .svc-grid, .exp-grid, .qual { grid-template-columns: 1fr; }
+    .result-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .stat .big { font-size: 40px; }
+    .slides { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .brand { font-size: 18px; }
+    .nav .btn.small { padding: 10px 14px; }
+    .c-item { flex-wrap: wrap; }
+    .a-card { padding: 24px; }
+  }
+</style>
+
+<nav class="nav" aria-label="Навигация">
+  <div class="wrap">
+    <a class="brand" href="#top">Жайна Султанова</a>
+    <div class="nav-links">
+      <a href="#result">Результат</a>
+      <a href="#services">Услуги</a>
+      <a href="#projects">Проекты</a>
+      <a href="#case">Кейс</a>
+      <a href="#video">Видео</a>
+      <a href="#education">Обучение</a>
+      <a href="#about">Обо мне</a>
+    </div>
+    <a class="btn small" href="#contact">Связаться</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">Портфолио · Алматы</span>
+      <h1><span>Жайна</span><span><em>Султанова</em></span></h1>
+      <div class="roles">
+        <p><b>SMM-специалист</b> — отвечаю за маркетинг в социальных сетях</p>
+        <p><b>Мобилограф</b> — снимаю и монтирую</p>
+        <p><b>Видеограф и монтажёр</b></p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn" href="#result">Смотреть кейсы
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 2v12M3 9l5 5 5-5"/></svg>
+        </a>
+        <a class="btn ghost" href="https://instagram.com/jaismillie" target="_blank" rel="noopener">Instagram @jaismillie</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="arch"><img src="images/photo.jpg" alt="Жайна Султанова, SMM-специалист" fetchpriority="high"></div>
+      <span class="sticker">Reels ✓</span>
+      <span class="sticker two">Карусели ✓</span>
+    </div>
+  </div>
+</header>
+
+<div class="tools" id="tools">
+  <div class="wrap">
+    <div class="tools-head">
+      <h2>Инструменты, с которыми работаю</h2>
+      <span class="eyebrow">9 программ</span>
+    </div>
+    <div class="tool-groups">
+      <div class="tool-group">
+        <h3>Видеомонтаж</h3>
+        <ul class="tool-list">
+          <li><b>CapCut</b><span>монтаж Reels и коротких видео</span></li>
+          <li><b>VN</b><span>мобильный монтаж</span></li>
+          <li><b>Adobe Premiere Pro</b><span>монтаж подкастов и уроков</span></li>
+          <li><b>DaVinci Resolve</b><span>монтаж и цветокоррекция</span></li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h3>Фото и дизайн</h3>
+        <ul class="tool-list">
+          <li><b>Photoshop</b><span>обработка фото и обложки</span></li>
+          <li><b>Canva</b><span>посты, карусели, сторис</span></li>
+          <li><b>Remini</b><span>улучшение качества фото</span></li>
+          <li><b>MagicEraser</b><span>удаление лишнего с фото</span></li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h3>Планирование</h3>
+        <ul class="tool-list">
+          <li><b>Preview</b><span>планирование и визуал ленты Instagram</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="approach">
+  <div class="wrap approach-grid">
+    <div class="a-card">
+      <span class="eyebrow">Цель</span>
+      <h3>Привожу через Instagram лояльную аудиторию и новых клиентов</h3>
+      <ul class="goal-list">
+        <li>
+          <span class="mk"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></svg></span>
+          <div><b>Целевая аудитория</b><span>Изучаю ЦА и говорю с ней на её языке</span></div>
+        </li>
+        <li>
+          <span class="mk"><svg viewBox="0 0 24 24"><path d="M4 19V11M10 19V5M16 19v-6M22 19H2"/></svg></span>
+          <div><b>Работа по KPI</b><span>Ставлю измеримые цели и отслеживаю результат</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="a-card">
+      <span class="eyebrow">Не только визуал</span>
+      <h3>Работаю системно</h3>
+      <div class="sys-grid">
+        <div class="sys"><b>Стратегия</b><span>план продвижения</span></div>
+        <div class="sys"><b>Аналитика</b><span>цифры и выводы</span></div>
+        <div class="sys"><b>Бриф</b><span>задачи клиента на старте</span></div>
+        <div class="sys"><b>Воронка</b><span>путь от подписки до покупки</span></div>
+        <div class="sys"><b>Прогрев</b><span>доверие перед продажей</span></div>
+        <div class="sys"><b>Договор</b><span>официальные условия работы</span></div>
+        <div class="sys hl"><b>UGC-креаторы</b><span>организую работу с UGC-креаторами</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="result">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Результат · страница, которую веду сейчас</span>
+      <h2>Кондитерская zauzau_almaty: до меня и сейчас</h2>
+      <p>Торты и кондитерская в Алматы. Обновила шапку профиля и хайлайтс, выстроила контент и вывела аккаунт на новый уровень охватов.</p>
+    </div>
+    <div class="result-grid">
+      <figure class="ba">
+        <span class="label">До меня</span>
+        <div class="phone"><img src="images/zauzau-before.jpg" alt="Профиль zauzau_almaty до работы: 42 публикации, 1 271 подписчик" data-zoom loading="lazy"></div>
+      </figure>
+      <figure class="ba">
+        <span class="label now">Сейчас</span>
+        <div class="phone"><img src="images/zauzau-after.jpg" alt="Профиль zauzau_almaty сейчас: 331 публикация, 12,6 тыс. подписчиков" data-zoom loading="lazy"></div>
+      </figure>
+      <div class="stats">
+        <div class="stat">
+          <div class="top"><span class="big">12,6<small> тыс.</small></span><span class="delta">+891%</span></div>
+          <span class="name">подписчиков</span>
+          <span class="from">было 1 271</span>
+        </div>
+        <div class="stat">
+          <div class="top"><span class="big">2,8<small> млн</small></span><span class="delta">+438%</span></div>
+          <span class="name">просмотров за 30 дней</span>
+          <span class="from">было 520,8 тыс.</span>
+        </div>
+        <div class="stat">
+          <div class="top"><span class="big">331</span><span class="delta">+289</span></div>
+          <span class="name">публикация</span>
+          <span class="from">было 42</span>
+        </div>
+        <p class="hand stat-note">подписчиков почти в 10 раз больше ↑</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Услуги</span>
+      <h2>С чем я работаю</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 9.5v5l4-2.5z"/></svg></span>
+        <h3>Reels-мейкер</h3>
+        <p>Reels для личного бренда: идея, съёмка, монтаж.</p>
+      </div>
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 20h18M6 16V9M11 16V5M16 16v-5M21 16V8"/></svg></span>
+        <h3>SMM</h3>
+        <p>Ведение бизнес-аккаунтов: упаковка, контент, прогрев, аналитика.</p>
+      </div>
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><path d="M4 7.5h3l1.5-2.5h7L17 7.5h3v11.5H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+        <h3>Мобилограф</h3>
+        <p>Съёмка на телефон и монтаж под ключ.</p>
+      </div>
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></span>
+        <h3>Съёмка уроков</h3>
+        <p>Съёмка и монтаж уроков для онлайн-курсов.</p>
+      </div>
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5v4"/></svg></span>
+        <h3>Подкасты</h3>
+        <p>Полный монтаж подкастов и обложки для выпусков.</p>
+      </div>
+      <div class="svc">
+        <span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/></svg></span>
+        <h3>UGC-креаторы</h3>
+        <p>Организую работу с UGC-креаторами для брендов.</p>
+      </div>
+    </div>
+    <div class="beyond">
+      <h3>Контент-форматы</h3>
+      <div class="chips">
+        <span class="chip outline">Reels</span>
+        <span class="chip outline">Карусели</span>
+        <span class="chip outline">Сторис</span>
+        <span class="chip outline">UGC</span>
+        <span class="chip outline">Подкасты</span>
+        <span class="chip outline">Хайлайтс</span>
+        <span class="chip outline">Логотип</span>
+        <span class="chip outline">Обложки</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Проекты</span>
+      <h2>Недавние проекты</h2>
+      <p>Аккаунты, которые я запускала с нуля или вела, и продакшн, в котором участвовала.</p>
+    </div>
+    <div class="proj-grid">
+      <article class="proj">
+        <div class="logo"><img src="images/logos/oskar.jpg" alt="Логотип Oskar Flowers" data-zoom loading="lazy"></div>
+        <div class="meta">
+          <span class="chip tag">Цветы</span>
+          <h3>Oskar Flowers</h3>
+          <p>Тюльпаны и цветы в Алматы · 954 подписчика</p>
+          <p class="hand">начали с нуля!</p>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="logo"><img src="images/logos/assad.jpg" alt="Логотип Assad Land" data-zoom loading="lazy"></div>
+        <div class="meta">
+          <span class="chip tag">Ландшафтный дизайн</span>
+          <h3>assad.land</h3>
+          <p>Ландшафтный дизайн и газон · 382 подписчика</p>
+          <p class="hand">с самого начала</p>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="logo"><img src="images/logos/grantmaster.jpg" alt="Логотип Grant Master" data-zoom loading="lazy"></div>
+        <div class="meta">
+          <span class="chip tag">Образование</span>
+          <h3>Grant Master</h3>
+          <p>Подготовка к магистратуре · 5 991 подписчик</p>
+          <p class="hand">2 месяца работы</p>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="logo"><img src="images/logos/juz40.jpg" alt="Логотип Juz40" data-zoom loading="lazy"></div>
+        <div class="meta">
+          <span class="chip tag">Образовательный центр для ЕНТ</span>
+          <h3>Juz40</h3>
+          <p>Опыт съёмки и монтажа уроков в студии</p>
+          <p class="hand">съёмка + монтаж</p>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="logo pad"><img src="images/logos/zauzau.jpg" alt="Логотип Zau Zau Almaty" data-zoom loading="lazy"></div>
+        <div class="meta">
+          <span class="chip tag">Кондитерская</span>
+          <h3>Zau Zau Almaty</h3>
+          <p>Торты и кондитерская в Алматы · 12,6 тыс. подписчиков</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="case" id="case">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Кейс · упаковка под ключ</span>
+      <h2>Pinduoduo: аккаунт о заказах из Китая</h2>
+      <p>Полная упаковка страницы: логотип, био и УТП, хайлайтс, сторис, лента, обучающие карусели, прогрев и продающий текст.</p>
+      <span class="hint">Наведите курсор или нажмите на фото, чтобы увеличить</span>
+    </div>
+
+    <div class="case-block">
+      <div class="bh"><h3>Упаковка</h3><p>Логотип, шапка профиля с УТП и единые обложки хайлайтс.</p></div>
+      <div class="pack">
+        <figure>
+          <div class="shot"><img src="images/pin-logo.jpg" alt="Логотип pin" data-zoom loading="lazy"></div>
+          <figcaption><b>Логотип</b></figcaption>
+        </figure>
+        <div class="right">
+          <div class="shot"><img src="images/pin-bio.jpg" alt="Био профиля Pinduoduo" data-zoom loading="lazy"></div>
+          <div class="translate">
+            <span class="eyebrow">Био и УТП · перевод</span>
+            <p>Пиндуодуо | Качественные товары | Онлайн 24/7. Прямая доставка в Казахстан — 139 express. Новости Пиндо 😻 | Акции 📈 | Бренды 💸. Разберём непонятные вопросы по Пиндо — пишите в direct 💌</p>
+          </div>
+          <figure>
+            <div class="shot"><img src="images/pin-highlights.jpg" alt="Хайлайтс: бренды косметики, топ, топ сумок, адрес, сайт" data-zoom loading="lazy"></div>
+            <figcaption><b>Хайлайтс:</b> бренды косметики, топ, топ сумок, привязка адреса, сайт Пиндуодуо</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-block">
+      <div class="bh"><h3>Сторис-контент</h3><p>Утренние сторис, полезные новости о сроках доставки и интерактив с опросами.</p></div>
+      <div class="row4">
+        <figure><div class="story"><img src="images/pin-story-1.jpg" alt="Сторис: доброе утро, логистика работает без выходных" data-zoom loading="lazy"></div><figcaption>Доброе утро: логистика без выходных</figcaption></figure>
+        <figure><div class="story"><img src="images/pin-story-2.jpg" alt="Сторис про китайский Новый год" data-zoom loading="lazy"></div><figcaption>Китайский Новый год: дни без отправок</figcaption></figure>
+        <figure><div class="story"><img src="images/pin-story-3.jpg" alt="Сторис про сроки доставки" data-zoom loading="lazy"></div><figcaption>Сроки доставки в Алматы</figcaption></figure>
+        <figure><div class="story"><img src="images/pin-story-4.jpg" alt="Сторис с опросом" data-zoom loading="lazy"></div><figcaption>Опрос и переход к посту</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="case-block">
+      <div class="bh"><h3>Карусель-инструкция</h3><p>Как привязать адрес в Pinduoduo, по шагам.</p></div>
+      <div class="slides">
+        <figure><div class="sq"><img src="images/pin-carousel-1.jpg" alt="Обложка карусели: привязка адреса" data-zoom loading="lazy"></div><span class="step">Обложка</span><figcaption>Pinduoduo: привязка адреса</figcaption></figure>
+        <figure><div class="sq"><img src="images/pin-carousel-2.jpg" alt="Шаг 1" data-zoom loading="lazy"></div><span class="step">Шаг 1</span><figcaption>Войдите в приложение и откройте профиль</figcaption></figure>
+        <figure><div class="sq"><img src="images/pin-carousel-3.jpg" alt="Шаг 2" data-zoom loading="lazy"></div><span class="step">Шаг 2</span><figcaption>Нажмите «Добавление адреса»</figcaption></figure>
+        <figure><div class="sq"><img src="images/pin-carousel-4.jpg" alt="Шаг 3" data-zoom loading="lazy"></div><span class="step">Шаг 3</span><figcaption>Заполните данные и сохраните</figcaption></figure>
+        <figure><div class="sq"><img src="images/pin-carousel-5.jpg" alt="Шаг 4" data-zoom loading="lazy"></div><span class="step">Шаг 4</span><figcaption>Выберите «Автовыбор»</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="case-block">
+      <div class="bh"><h3>Прогрев и лента</h3><p>Пост-прогрев «Ваш дом — ваш магазин» с продающим текстом и лента в едином фирменном стиле.</p></div>
+      <div class="warm">
+        <figure><div class="shot"><img src="images/pin-warmup.jpg" alt="Пост-прогрев: ваш дом — ваш магазин" data-zoom loading="lazy"></div><figcaption><b>Прогрев</b></figcaption></figure>
+        <figure><div class="shot"><img src="images/pin-feed.jpg" alt="Лента аккаунта Pinduoduo" data-zoom loading="lazy"></div><figcaption><b>Лента</b></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Контент</span>
+      <h2>Креативы для таргета</h2>
+      <p>Продающие карусели для тура на Пхукет: цена, что входит в стоимость, призыв написать в direct.</p>
+      <span class="hint">Наведите курсор или нажмите на фото, чтобы увеличить</span>
+    </div>
+    <div class="tour">
+      <figure><div class="p45"><img src="images/phuket-1.jpg" alt="Карусель: Пхукет зимой, 490 000 ₸, всё включено" data-zoom loading="lazy"></div></figure>
+      <figure><div class="p45"><img src="images/phuket-2.jpg" alt="Карусель: устала от холода? +30°C вместо зимы" data-zoom loading="lazy"></div></figure>
+      <figure><div class="p45"><img src="images/phuket-3.jpg" alt="Карусель: без лишних забот, мы всё организуем" data-zoom loading="lazy"></div></figure>
+      <figure><div class="p45"><img src="images/phuket-4.jpg" alt="Карусель: хочешь в Пхукет?" data-zoom loading="lazy"></div></figure>
+    </div>
+
+    <h3 class="sub">Мой визуал и съёмка</h3>
+    <div class="visual-grid">
+      <figure>
+        <div class="phone"><img src="images/visual-1.jpg" alt="Эстетичная лента: лайфстайл" data-zoom loading="lazy"></div>
+        <figcaption><b>Лайфстайл-лента</b></figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><img src="images/visual-2.jpg" alt="Предметная лента с мандаринами" data-zoom loading="lazy"></div>
+        <figcaption><b>Предметная съёмка</b></figcaption>
+      </figure>
+      <figure class="shoot-wrap">
+        <div class="shoot">
+          <div class="tall"><img src="images/shoot-1.jpg" alt="Фотосессия: коллаж образов" data-zoom loading="lazy"></div>
+          <div class="tall"><img src="images/shoot-2.jpg" alt="Фотосессия в студии" data-zoom loading="lazy"></div>
+          <div class="tall"><img src="images/shoot-3.jpg" alt="Фотосессия: три образа" data-zoom loading="lazy"></div>
+        </div>
+        <figcaption><b>Съёмка и монтаж</b> · студийная фотосессия</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="video" id="video">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Видеопродакшн</span>
+      <h2>Мои работы</h2>
+      <p>Монтирую подкасты, делаю обложки, снимаю и монтирую уроки для онлайн-курсов.</p>
+      <span class="hint">Наведите курсор или нажмите на фото, чтобы увеличить</span>
+    </div>
+    <div class="reel">
+      <figure><div class="frame"><img src="images/podcast-1.jpg" alt="Съёмка подкаста в студии" data-zoom loading="lazy"></div><figcaption><b>Подкаст</b> · монтаж</figcaption></figure>
+      <figure><div class="frame"><img src="images/podcast-2.jpg" alt="Съёмка подкаста, три участника" data-zoom loading="lazy"></div><figcaption><b>Подкаст</b> · монтаж</figcaption></figure>
+      <figure><div class="frame"><img src="images/cover.jpg" alt="Обложка видео про IELTS" data-zoom loading="lazy"></div><figcaption><b>Обложка</b> · «Как набрать 9.0 на IELTS»</figcaption></figure>
+      <figure><div class="frame"><img src="images/course-1.jpg" alt="Урок онлайн-курса Juz40" data-zoom loading="lazy"></div><figcaption><b>Онлайн-курс</b> · съёмка и монтаж</figcaption></figure>
+      <figure><div class="frame"><img src="images/course-2.jpg" alt="Урок онлайн-курса по химии" data-zoom loading="lazy"></div><figcaption><b>Онлайн-курс</b> · съёмка и монтаж</figcaption></figure>
+      <figure><div class="frame"><img src="images/studio.jpg" alt="Съёмка урока в студии с хромакеем" data-zoom loading="lazy"></div><figcaption><b>Студия Juz40</b> · съёмка уроков</figcaption></figure>
+    </div>
+
+    <div class="experts">
+      <div class="head">
+        <span class="eyebrow">Социальное доказательство</span>
+        <h2>Эксперты, блогеры и компании, с которыми я работала</h2>
+      </div>
+      <div class="exp-grid">
+        <article class="exp">
+          <div class="ava"><img src="images/experts/4283.jpg" alt="Жанерке Сейфуллина" data-zoom loading="lazy"></div>
+          <h3>Жанерке Сейфуллина</h3>
+          <p>Казахстанская бьюти-блогер, мотиватор и автор подкаста «Айтарым бар».</p>
+        </article>
+        <article class="exp">
+          <div class="ava"><img src="images/experts/4284.jpg" alt="Айнұр Тұрсынбаева" data-zoom loading="lazy"></div>
+          <h3>Айнұр Тұрсынбаева</h3>
+          <p>Известная казахстанская акын-импровизатор, участница айтысов. Делится в соцсетях мыслями о психологии, саморазвитии и жизненном опыте.</p>
+        </article>
+        <article class="exp">
+          <div class="ava"><img src="images/experts/4285.jpg" alt="Лаура Лесбек" data-zoom loading="lazy"></div>
+          <h3>Лаура Лесбек</h3>
+          <p>Блогер и коуч по саморазвитию. Автор мотивационного фильма «LAULA» и YouTube-подкаста о самопознании и поиске своего пути.</p>
+        </article>
+        <article class="exp">
+          <div class="ava"><img src="images/experts/4286.jpg" alt="Ерсін Сұлтан" data-zoom loading="lazy"></div>
+          <h3>Ерсін Сұлтан</h3>
+          <p>Специалист в сфере маркетинга и контент-мейкер. Создаёт контент о маркетинге и соцсетях, делится личным опытом на YouTube.</p>
+        </article>
+        <article class="exp">
+          <div class="ava"><img src="images/experts/4287.jpg" alt="Ислам Беріхан" data-zoom loading="lazy"></div>
+          <h3>Ислам Беріхан</h3>
+          <p>Предприниматель, инвестор и контент-мейкер. Создаёт контент о бизнесе и инвестициях, основатель проекта GRADIENT.</p>
+        </article>
+        <article class="exp">
+          <div class="ava"><img src="images/experts/4288.jpg" alt="JUZ40 Online" data-zoom loading="lazy"></div>
+          <h3>JUZ40 Online</h3>
+          <p>EdTech-компания, которая готовит школьников к ҰБТ и ЕНТ: онлайн-курсы и подготовка к гранту.</p>
+        </article>
+        <article class="exp">
+          <div class="ava"><img src="images/experts/4290.jpg" alt="Зама Темірланқызы" data-zoom loading="lazy"></div>
+          <h3>Зама Темірланқызы</h3>
+          <p>Автор цифрового контента и PR-специалист. Основатель Creator-академии, обучает созданию контента.</p>
+        </article>
+        <article class="exp">
+          <div class="ava"><img src="images/experts/4289.jpg" alt="Сая Кидирали" data-zoom loading="lazy"></div>
+          <h3>Сая Кидирали</h3>
+          <p>Блогер и преподаватель английского, специалист по IELTS. Получила IELTS 9.0 в 17 лет.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Личный блог</span>
+      <h2>Мой аккаунт</h2>
+      <p>Личный блог о жизни, учёбе и эстетике. Здесь же показываю, как оформляю сторис.</p>
+      <span class="hint">Наведите курсор или нажмите на фото, чтобы увеличить</span>
+    </div>
+    <div class="blog-grid">
+      <figure>
+        <div class="phone"><img src="images/my-feed.jpg" alt="Лента аккаунта @jaismillie" data-zoom loading="lazy"></div>
+      </figure>
+      <div class="right">
+        <div class="shot"><img src="images/my-profile.jpg" alt="Шапка профиля @jaismillie: 760 подписчиков" data-zoom loading="lazy"></div>
+        <div class="shot"><img src="images/my-highlights.jpg" alt="Хайлайтс: My case, SMM обучение, Unpacking, Nails, Aesthetics" data-zoom loading="lazy"></div>
+        <a class="btn" style="justify-self:start" href="https://instagram.com/jaismillie" target="_blank" rel="noopener">Открыть @jaismillie</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="edu" id="education">
+  <div class="wrap">
+    <div class="edu-box">
+      <div class="edu-text">
+        <span class="eyebrow">Обучение</span>
+        <h2>SMM-наставничество «СММ СТАРТ ПРО»</h2>
+        <p>Полностью прошла наставничество у Лизы Айбеккызы и получила сертификат SMM-менеджера.</p>
+        <div class="edu-facts">
+          <div><b>1,5 месяца</b><span>длительность</span></div>
+          <div><b>Лиза Айбеккызы</b><span>наставник</span></div>
+          <div><b>Сертификат</b><span>SMM-менеджер</span></div>
+        </div>
+      </div>
+      <figure>
+        <div class="cert"><img src="images/certificate.jpg" alt="Сертификат: Жайна Султанова прошла наставничество «СММ СТАРТ ПРО»" data-zoom loading="lazy"></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="head" style="margin-bottom:32px">
+        <span class="eyebrow">Обо мне</span>
+        <h2>Креативность и системный подход</h2>
+      </div>
+      <dl class="facts">
+        <div class="fact"><dt>Возраст</dt><dd>22 года</dd></div>
+        <div class="fact"><dt>Образование</dt><dd>Выпускница факультета «Фармация» Казахского национального медицинского университета им. С. Д. Асфендиярова</dd></div>
+        <div class="fact"><dt>Языки</dt><dd>Казахский, русский</dd></div>
+      </dl>
+    </div>
+    <div>
+      <span class="eyebrow">Мои качества</span>
+      <div class="qual" style="margin-top:16px">
+        <span>Креативность</span>
+        <span>Коммуникабельность</span>
+        <span>Эмпатия</span>
+        <span>Тайм-менеджмент и самоорганизация</span>
+        <span>Адаптивность</span>
+        <span>Стратегическое мышление</span>
+        <span>Аналитическое мышление</span>
+        <span>Стрессоустойчивость</span>
+        <span>Критическое мышление</span>
+        <span>Готовность к постоянному обучению</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <span class="eyebrow">Контакты</span>
+        <h2 style="margin-top:14px">Давайте продвигать ваш бизнес вместе</h2>
+        <p class="hand">Напишите мне — обсудим ваш проект ✨</p>
+      </div>
+      <div class="c-list">
+        <div class="c-item">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M5 3.5h4l2 5-2.5 1.5a11 11 0 0 0 5.5 5.5l1.5-2.5 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></svg></span>
+          <div class="txt"><small>Телефон / WhatsApp</small><a href="tel:+77756520475">+7 775 652 04 75</a></div>
+          <button class="copy" type="button" data-copy="+77756520475">Копировать</button>
+        </div>
+        <div class="c-item">
+          <span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg></span>
+          <div class="txt"><small>Почта</small><a href="mailto:jaismillie04@mail.ru">jaismillie04@mail.ru</a></div>
+          <button class="copy" type="button" data-copy="jaismillie04@mail.ru">Копировать</button>
+        </div>
+        <div class="c-item">
+          <span class="ico"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></svg></span>
+          <div class="txt"><small>Instagram</small><a href="https://instagram.com/jaismillie" target="_blank" rel="noopener">@jaismillie</a></div>
+        </div>
+        <a class="btn" style="justify-self:start;margin-top:6px" href="https://wa.me/77756520475" target="_blank" rel="noopener">Написать в WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Жайна Султанова · SMM · Алматы</span>
+    <a href="#top">Наверх ↑</a>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Увеличенное изображение">
+  <button type="button" id="lb-close" aria-label="Закрыть">×</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</dialog>
+
+<script>
+  (function () {
+    var lb = document.getElementById('lb');
+    var big = document.getElementById('lb-img');
+    var cap = document.getElementById('lb-cap');
+    var canHover = window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var M = 12;
+
+    function openBox(img) {
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt;
+      cap.textContent = img.alt;
+      if (lb.showModal) lb.showModal(); else window.open(img.src, '_blank');
+    }
+
+    document.querySelectorAll('[data-zoom]').forEach(function (img) {
+      var wrap = img.parentElement;
+      wrap.classList.add('zw');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.addEventListener('click', function () { unzoom(); openBox(img); });
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBox(img); }
+      });
+      if (!canHover) return;
+
+      var timer = null;
+      function zoom() {
+        var r = wrap.getBoundingClientRect();
+        var vw = document.documentElement.clientWidth, vh = window.innerHeight;
+        var s = Math.min(2.6, (vw - 2 * M) / r.width, (vh * 0.86) / r.height);
+        if (s < 1.12) return;
+        var W = r.width * s, H = r.height * s;
+        var left = Math.min(Math.max(r.left + r.width / 2 - W / 2, M), vw - M - W);
+        var top = Math.min(Math.max(r.top + r.height / 2 - H / 2, 72), vh - M - H);
+        var ox = (r.left - left) / (s - 1), oy = (r.top - top) / (s - 1);
+        wrap.style.transformOrigin = ox + 'px ' + oy + 'px';
+        wrap.style.transform = 'scale(' + s + ')';
+        wrap.classList.add('on');
+      }
+      function unzoom() {
+        clearTimeout(timer);
+        if (!wrap.classList.contains('on')) return;
+        wrap.style.transform = '';
+        setTimeout(function () { if (!wrap.style.transform) wrap.classList.remove('on'); }, 280);
+      }
+      img.addEventListener('mouseenter', function () { timer = setTimeout(zoom, 140); });
+      img.addEventListener('mouseleave', unzoom);
+      window.addEventListener('scroll', unzoom, { passive: true });
+    });
+
+    document.getElementById('lb-close').addEventListener('click', function () { lb.close(); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+
+    document.querySelectorAll('[data-copy]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var text = b.getAttribute('data-copy');
+        var done = function () { b.textContent = 'Скопировано'; setTimeout(function () { b.textContent = 'Копировать'; }, 1600); };
+        var fallback = function () {
+          var r = document.createRange(); r.selectNodeContents(b.previousElementSibling.querySelector('a'));
+          var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Выделено';
+        };
+        try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+      });
+    });
+  })();
+</script>
